@@ -1,0 +1,116 @@
+.photo-uploader {
+  width: 100%;
+}
+
+.dropzone {
+  border: 3px dashed rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  padding: 60px 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.dropzone:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.02);
+}
+
+.dropzone.active {
+  border-color: #ffd700;
+  background: rgba(255, 215, 0, 0.1);
+  transform: scale(1.05);
+}
+
+.dropzone.uploading {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.dropzone-content {
+  color: white;
+}
+
+.dropzone-content .emoji {
+  font-size: 4em;
+  margin-bottom: 20px;
+  display: block;
+  animation: bounce 2s infinite;
+}
+
+.dropzone-content .main-text {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.dropzone-content .sub-text {
+  font-size: 1.1em;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+.dropzone-content .hint {
+  font-size: 0.95em;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.uploading-content {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.error-message {
+  color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.1);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .dropzone {
+    padding: 40px 20px;
+  }
+
+  .dropzone-content .emoji {
+    font-size: 3em;
+  }
+
+  .dropzone-content .main-text {
+    font-size: 1.2em;
+  }
+}
